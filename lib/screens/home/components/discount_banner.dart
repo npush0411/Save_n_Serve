@@ -22,12 +22,14 @@ class DiscountBanner extends StatelessWidget {
         TextSpan(
           style: TextStyle(color: Colors.white),
           children: [
-            TextSpan(text: "Save n' Serve\n"),
+            TextSpan(text: "Save n' Serve\n",style: TextStyle(
+              fontSize: 30,fontWeight: FontWeight.bold,
+            )),
             TextSpan(
               text: "Connecting Communities,\nNourishing Lives !!",
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontSize: 16,
+
               ),
             ),
           ],
