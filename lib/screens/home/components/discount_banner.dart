@@ -24,7 +24,7 @@ class DiscountBanner extends StatelessWidget {
           children: [
             TextSpan(text: "Save n' Serve\n"),
             TextSpan(
-              text: "Minimizing Hunger",
+              text: "Connecting Communities,\nNourishing Lives !!",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

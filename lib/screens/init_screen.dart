@@ -8,7 +8,7 @@ import 'package:shop_app/screens/profile/profile_screen.dart';
 const Color inActiveIconColor = Color(0xFFB6B6B6);
 
 class InitScreen extends StatefulWidget {
-  const InitScreen({super.key});
+  const InitScreen({Key? key});
 
   static String routeName = "/";
 
@@ -46,14 +46,14 @@ class _InitScreenState extends State<InitScreen> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               "assets/icons/Shop Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
             activeIcon: SvgPicture.asset(
               "assets/icons/Shop Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
               ),
@@ -63,14 +63,14 @@ class _InitScreenState extends State<InitScreen> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               "assets/icons/Heart Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
             activeIcon: SvgPicture.asset(
               "assets/icons/Heart Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
               ),
@@ -80,14 +80,14 @@ class _InitScreenState extends State<InitScreen> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               "assets/icons/Chat bubble Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
             activeIcon: SvgPicture.asset(
               "assets/icons/Chat bubble Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
               ),
@@ -97,14 +97,14 @@ class _InitScreenState extends State<InitScreen> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               "assets/icons/User Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
             activeIcon: SvgPicture.asset(
               "assets/icons/User Icon.svg",
-              colorFilter: const ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
               ),
@@ -116,7 +116,6 @@ class _InitScreenState extends State<InitScreen> {
     );
   }
 }
-
 class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -126,9 +125,12 @@ class ChatApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       home: ChatScreen(),
+      debugShowCheckedModeBanner: false, // Add this line to remove the debug label
     );
   }
 }
+
+
 class ChatScreen extends StatefulWidget {
   @override
   _ChatScreenState createState() => _ChatScreenState();
@@ -138,12 +140,27 @@ class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _controller = TextEditingController();
   final List<String> _messages = [];
 
-  void _addMessage() {
-    if (_controller.text.isNotEmpty) {
-      setState(() {
-        _messages.insert(0, _controller.text);
-        _controller.clear();
-      });
+  @override
+  void initState() {
+    super.initState();
+    _addReceivedMessage("Welcome User!\nThis is Chat service to resolve your queries\nYou can use it to resolve your queries 24x7");
+  }
+
+  void _addMessage(String text) {
+    setState(() {
+      _messages.insert(0, "You: $text");
+    });
+  }
+
+  void _addReceivedMessage(String text) {
+    setState(() {
+      _messages.insert(0, "App: $text");
+    });
+  }
+
+  void _handleMessage(String text) {
+    if (text.toLowerCase() == "hello") {
+      _addReceivedMessage("Good Greetings of time...!\nWe're at your service\nDrop Your Query below !!");
     }
   }
 
@@ -151,7 +168,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Save n Save Chat Box'),
+        title: Text('Save n Serve Chat Box'),
       ),
       body: Column(
         children: <Widget>[
@@ -179,16 +196,22 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: TextField(
                       controller: _controller,
                       onSubmitted: (String text) {
-                        _addMessage();
+                        _handleMessage(text);
+                        _addMessage(text);
+                        _controller.clear();
                       },
-                      decoration:
-                      InputDecoration.collapsed(hintText: 'Send a message'),
+                      decoration: InputDecoration.collapsed(hintText: 'Send a message'),
                     ),
                   ),
                 ),
                 IconButton(
                   icon: Icon(Icons.send),
-                  onPressed: _addMessage,
+                  onPressed: () {
+                    String text = _controller.text;
+                    _addMessage(text);
+                    _handleMessage(text);
+                    _controller.clear();
+                  },
                 ),
               ],
             ),
