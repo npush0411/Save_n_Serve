@@ -18,15 +18,31 @@ class HomeHeader extends StatelessWidget {
         children: [
           const Expanded(child: SearchField()),
           const SizedBox(width: 16),
+
+          const SizedBox(width: 8),
           IconBtnWithCounter(
             svgSrc: "assets/icons/Cart Icon.svg",
             press: () => Navigator.pushNamed(context, CartScreen.routeName),
           ),
-          const SizedBox(width: 8),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/Bell.svg",
-            numOfitem: 3,
-            press: () {},
+          PopupMenuButton<String>(
+            icon: Icon(Icons.filter_list),
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              PopupMenuItem<String>(
+                value: 'Available now',
+                child: Text('Available now'),
+              ),
+              PopupMenuItem<String>(
+                value: 'Nearest',
+                child: Text('Nearest'),
+              ),
+              PopupMenuItem<String>(
+                value: 'SnS Assured',
+                child: Text('SnS Assured'),
+              ),
+            ],
+            onSelected: (String value) {
+              // Handle selection
+            },
           ),
         ],
       ),

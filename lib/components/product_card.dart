@@ -68,13 +68,15 @@ class ProductCard extends StatelessWidget {
                           : kSecondaryColor.withOpacity(0.1),
                       shape: BoxShape.circle,
                     ),
-                    child: SvgPicture.asset(
-                      "assets/icons/Heart Icon_2.svg",
-                      colorFilter: ColorFilter.mode(
-                          product.isFavourite
-                              ? const Color(0xFFFF4848)
-                              : const Color(0xFFDBDEE4),
-                          BlendMode.srcIn),
+                    child: Center(
+                      child: SvgPicture.asset(
+                        "assets/icons/Clock_Icon.svg",
+                        color: product.isFavourite
+                            ? const Color(0xFFFF4848)
+                            : const Color(0xFFDBDEE4),
+                        height: 30, // Adjust the size of the clock icon here
+                        width: 20, // Adjust the size of the clock icon here
+                      ),
                     ),
                   ),
                 ),

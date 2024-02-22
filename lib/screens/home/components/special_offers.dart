@@ -15,7 +15,7 @@ class SpecialOffers extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SectionTitle(
-            title: "Currently Available",
+            title: "Recently Uploaded",
             press: () {},
           ),
         ),

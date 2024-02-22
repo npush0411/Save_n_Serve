@@ -172,5 +172,154 @@ List<Product> demoProducts = [
   ),
 ];
 
+List<Product> hotel = [
+  Product(
+    id: 1,
+    images: [
+      "assets/images/nat.png",
+      // "assets/images/ps4_console_white_2.png",
+      // "assets/images/ps4_console_white_3.png",
+      // "assets/images/ps4_console_white_4.png",
+    ],
+    // colors: [
+    // //   const Color(0xFFF6625E),
+    // //   const Color(0xFF836DB8),
+    // //   const Color(0xFFDECB9C),
+    // //   Colors.white,
+    // ],
+    title: "Hotel Natraj",
+    price: 1.2,
+    description: description,
+    rating: 4.8,
+    isFavourite: false,
+    isPopular: true,
+  ),
+  Product(
+    id: 2,
+    images: [
+      "assets/images/avare.png",
+    ],
+    // colors: [
+    //   const Color(0xFFF6625E),
+    //   const Color(0xFF836DB8),
+    //   const Color(0xFFDECB9C),
+    //   Colors.white,
+    // ],
+    title: "Avare Mess",
+    price: 3,
+    description: description,
+    rating: 4.1,
+    isPopular: true,
+  ),
+  Product(
+    id: 3,
+    images: [
+      "assets/images/abhhi.png",
+    ],
+    // colors: [
+    //   const Color(0xFFF6625E),
+    //   const Color(0xFF836DB8),
+    //   const Color(0xFFDECB9C),
+    //   Colors.white,
+    // ],
+    title: "Hotel Abhiruchi",
+    price: 10,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    isPopular: true,
+  ),
+  Product(
+    id: 4,
+    images: [
+      "assets/images/vandan.png",
+    ],
+    // colors: [
+    //   const Color(0xFFF6625E),
+    //   const Color(0xFF836DB8),
+    //   const Color(0xFFDECB9C),
+    //   Colors.white,
+    // ],
+    title: "Hotel Vandan",
+    price: 20.20,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+  ),
+Product(
+id: 1,
+images: [
+"assets/images/nat.png",
+// "assets/images/ps4_console_white_2.png",
+// "assets/images/ps4_console_white_3.png",
+// "assets/images/ps4_console_white_4.png",
+],
+// colors: [
+// //   const Color(0xFFF6625E),
+// //   const Color(0xFF836DB8),
+// //   const Color(0xFFDECB9C),
+// //   Colors.white,
+// ],
+title: "Hotel Natraj",
+price: 1.2,
+description: description,
+rating: 4.8,
+isFavourite: false,
+isPopular: true,
+),
+Product(
+id: 2,
+images: [
+"assets/images/avare.png",
+],
+// colors: [
+//   const Color(0xFFF6625E),
+//   const Color(0xFF836DB8),
+//   const Color(0xFFDECB9C),
+//   Colors.white,
+// ],
+title: "Avare Mess",
+price: 3,
+description: description,
+rating: 4.1,
+isPopular: true,
+),
+Product(
+id: 3,
+images: [
+"assets/images/abhhi.png",
+],
+// colors: [
+//   const Color(0xFFF6625E),
+//   const Color(0xFF836DB8),
+//   const Color(0xFFDECB9C),
+//   Colors.white,
+// ],
+title: "Hotel Abhiruchi",
+price: 10,
+description: description,
+rating: 4.1,
+isFavourite: true,
+isPopular: true,
+),
+Product(
+id: 4,
+images: [
+"assets/images/vandan.png",
+],
+// colors: [
+//   const Color(0xFFF6625E),
+//   const Color(0xFF836DB8),
+//   const Color(0xFFDECB9C),
+//   Colors.white,
+// ],
+title: "Hotel Vandan",
+price: 20.20,
+description: description,
+rating: 4.1,
+isFavourite: true,
+),
+];
+
 const String description =
     "Authentic Spicy or Healthy and Fresh Food !!...";

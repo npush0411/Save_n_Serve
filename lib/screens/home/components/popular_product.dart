@@ -16,7 +16,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SectionTitle(
-            title: "LeftOver Food Items",
+            title: "More Donors...!",
             press: () {
               Navigator.pushNamed(context, ProductsScreen.routeName);
             },
@@ -27,18 +27,18 @@ class PopularProducts extends StatelessWidget {
           child: Row(
             children: [
               ...List.generate(
-                demoProducts.length,
+                hotel.length,
                 (index) {
-                  if (demoProducts[index].isPopular) {
+                  if (hotel[index].isPopular) {
                     return Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: ProductCard(
-                        product: demoProducts[index],
+                        product: hotel[index],
                         onPress: () => Navigator.pushNamed(
                           context,
                           DetailsScreen.routeName,
                           arguments: ProductDetailsArguments(
-                              product: demoProducts[index]),
+                              product: hotel[index]),
                         ),
                       ),
                     );
