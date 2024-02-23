@@ -61,22 +61,17 @@ class _InitScreenState extends State<InitScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              "assets/icons/Heart Icon.svg",
-              colorFilter: ColorFilter.mode(
-                inActiveIconColor,
-                BlendMode.srcIn,
-              ),
+            icon: Icon(
+              Icons.access_time,
+              color: inActiveIconColor,
             ),
-            activeIcon: SvgPicture.asset(
-              "assets/icons/Heart Icon.svg",
-              colorFilter: ColorFilter.mode(
-                kPrimaryColor,
-                BlendMode.srcIn,
-              ),
+            activeIcon: Icon(
+              Icons.access_time,
+              color: kPrimaryColor,
             ),
             label: "Fav",
           ),
+
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               "assets/icons/Chat bubble Icon.svg",
